@@ -13,10 +13,10 @@ class OpenWeatherClientTest {
 
     @Autowired
     private lateinit var sut : OpenWeatherClient
-    
+
     @Test
     fun `should return weather of Salvador`() {
-        var weather: Weather = sut.getWeather("Salvador", "b77e07f479efe92156376a8b07640ced")
+        var weather: Weather = sut.getWeather("Salvador")
 
         println(weather.name)
         println(weather.main!!.temp)
