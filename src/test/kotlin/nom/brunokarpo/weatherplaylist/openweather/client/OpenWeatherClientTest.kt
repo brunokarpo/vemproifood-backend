@@ -24,4 +24,14 @@ class OpenWeatherClientTest {
         assertThat(weather.main).isNotNull
         assertThat(weather.main!!.temp).isNotNull()
     }
+
+    @Test
+    fun `should return weather for lat and log coordinates`() {
+        var weather: Weather = sut.getWeather(-49.25, -16.68)
+
+        assertThat(weather).isNotNull
+        assertThat(weather.name).isEqualTo("Goiania")
+        assertThat(weather.main).isNotNull
+        assertThat(weather.main!!.temp).isNotNull()
+    }
 }

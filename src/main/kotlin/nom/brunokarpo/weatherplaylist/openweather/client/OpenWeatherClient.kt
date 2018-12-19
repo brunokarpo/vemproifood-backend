@@ -10,4 +10,7 @@ interface OpenWeatherClient {
 
     @GetMapping(value = "/weather?APPID=\${openweather.api-key}&units=imperial")
     fun getWeather(@RequestParam("q") city: String): Weather
+
+    @GetMapping(value = "/weather?APPID=\${openweather.api-key}&units=imperial")
+    fun getWeather(@RequestParam("lon") lon: Double, @RequestParam("lat") lat: Double): Weather
 }
