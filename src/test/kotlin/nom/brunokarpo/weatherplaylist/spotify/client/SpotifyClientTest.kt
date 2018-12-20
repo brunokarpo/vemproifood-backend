@@ -1,5 +1,8 @@
 package nom.brunokarpo.weatherplaylist.spotify.client
 
+import com.wrapper.spotify.model_objects.specification.Paging
+import com.wrapper.spotify.model_objects.specification.Track
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
@@ -16,8 +19,8 @@ class SpotifyClientTest {
 
     @Test
     fun `should retrieve by music style`() {
-        var playlist: String = sut.getPlaylistByStyle("ROCK")
+        var playlist: Paging<Track> = sut.getPlaylistByStyle("ROCK")
 
-        println(playlist)
+        assertThat(playlist).isNotNull
     }
 }
