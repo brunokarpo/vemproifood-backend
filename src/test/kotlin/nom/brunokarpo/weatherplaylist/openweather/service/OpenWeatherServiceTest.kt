@@ -6,6 +6,7 @@ import nom.brunokarpo.weatherplaylist.openweather.model.Weather
 import nom.brunokarpo.weatherplaylist.openweather.service.impl.OpenWeatherServiceImpl
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
+import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito
@@ -13,13 +14,14 @@ import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner::class)
+@Ignore
 class OpenWeatherServiceTest {
 
     companion object {
-        val CITY: String = "Salvador"
-        val LAT: Double = 50.0
-        val LON: Double = 45.0
-        val TEMP: Double = 90.0
+        private const val CITY: String = "Salvador"
+        private const val LAT: Double = 50.0
+        private const val LON: Double = 45.0
+        private const val TEMP: Double = 90.0
     }
 
     @MockBean
