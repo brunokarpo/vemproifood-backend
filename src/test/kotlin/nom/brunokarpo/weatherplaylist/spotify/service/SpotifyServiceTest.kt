@@ -1,8 +1,8 @@
 package nom.brunokarpo.weatherplaylist.spotify.service
 
-import com.wrapper.spotify.model_objects.specification.Paging
-import com.wrapper.spotify.model_objects.specification.Track
 import nom.brunokarpo.weatherplaylist.spotify.client.SpotifyClient
+import nom.brunokarpo.weatherplaylist.spotify.model.Playlist
+import nom.brunokarpo.weatherplaylist.spotify.model.Track
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import org.junit.Test
@@ -20,20 +20,26 @@ class SpotifyServiceTest {
     @MockBean
     private lateinit var spotifyClient: SpotifyClient
 
-    @MockBean
-    private lateinit var playlist: Paging<Track>
-
     @Autowired
     private lateinit var sut: SpotifyService
 
     @Before
     fun setUp() {
+
+        val playlist = Playlist(
+                arrayListOf(
+                        Track(name = "Cowboy fora da Lei",
+                                artist = "Raul Seixas",
+                                album = "Cowboy fora da Lei")
+                )
+        )
+
         Mockito.`when`(spotifyClient.getPlaylistByStyle("ROCK")).thenReturn(playlist)
     }
 
     @Test
     fun `should call client to retrieve playlist by style`() {
-        val paging: Paging<Track> = sut.getPlaylistByStyle("ROCK")
+        val paging: Playlist = sut.getPlaylistByStyle("ROCK")
 
         assertThat(paging).isNotNull
     }

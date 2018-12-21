@@ -1,10 +1,9 @@
 package nom.brunokarpo.weatherplaylist.spotify.client
 
-import com.wrapper.spotify.model_objects.specification.Paging
-import com.wrapper.spotify.model_objects.specification.Track
+import nom.brunokarpo.weatherplaylist.spotify.model.Playlist
 
 interface SpotifyClient {
 
-    fun getPlaylistByStyle(style: String): Paging<Track>
+    fun getPlaylistByStyle(style: String): Playlist
 
 }

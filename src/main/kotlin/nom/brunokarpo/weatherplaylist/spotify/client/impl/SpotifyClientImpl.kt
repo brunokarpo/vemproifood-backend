@@ -2,10 +2,10 @@ package nom.brunokarpo.weatherplaylist.spotify.client.impl
 
 import com.wrapper.spotify.SpotifyApi
 import com.wrapper.spotify.model_objects.credentials.ClientCredentials
-import com.wrapper.spotify.model_objects.specification.Paging
-import com.wrapper.spotify.model_objects.specification.Track
 import com.wrapper.spotify.requests.authorization.client_credentials.ClientCredentialsRequest
 import nom.brunokarpo.weatherplaylist.spotify.client.SpotifyClient
+import nom.brunokarpo.weatherplaylist.spotify.model.Playlist
+import nom.brunokarpo.weatherplaylist.spotify.model.converter.PlaylistConverter
 import org.springframework.stereotype.Component
 
 @Component
@@ -15,8 +15,10 @@ class SpotifyClientImpl(
 
     private var clientCredentials : ClientCredentials? = null
 
-    override fun getPlaylistByStyle(style: String): Paging<Track> {
-        return getSpotifyApi().searchTracks(style).limit(10).build().execute()
+    override fun getPlaylistByStyle(style: String): Playlist {
+        val paging = getSpotifyApi().searchTracks(style).limit(10).build().execute()
+
+        return PlaylistConverter(paging).toPlaylist()
     }
 
     private fun getSpotifyApi() : SpotifyApi {
