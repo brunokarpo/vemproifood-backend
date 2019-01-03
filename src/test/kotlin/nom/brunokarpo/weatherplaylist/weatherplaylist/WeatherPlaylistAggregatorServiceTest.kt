@@ -41,14 +41,14 @@ class WeatherPlaylistAggregatorServiceTest {
     private lateinit var spotifyServiceMock: SpotifyService
 
     @MockBean
-    private lateinit var weatherPlaylistStyleTranslaterMock: WeatherPlaylistStyleTranslater
+    private lateinit var weatherPlaylistStyleTranslatorMock: WeatherPlaylistStyleTranslator
 
     private lateinit var sut: WeatherPlaylistAggregatorService
 
 
     @Before
     fun setUp() {
-        sut = WeatherPlaylistAggregatorServiceImpl(openweatherServiceMock, spotifyServiceMock, weatherPlaylistStyleTranslaterMock)
+        sut = WeatherPlaylistAggregatorServiceImpl(openweatherServiceMock, spotifyServiceMock, weatherPlaylistStyleTranslatorMock)
 
         Mockito.`when`(openweatherServiceMock.getWeather(CITY))
                 .thenReturn(WEATHER)
@@ -59,7 +59,7 @@ class WeatherPlaylistAggregatorServiceTest {
         Mockito.`when`(spotifyServiceMock.getPlaylistByStyle(STYLE))
                 .thenReturn(PLAYLIST)
 
-        Mockito.`when`(weatherPlaylistStyleTranslaterMock.getStyleByTemperature(WEATHER))
+        Mockito.`when`(weatherPlaylistStyleTranslatorMock.getStyleByTemperature(WEATHER))
                 .thenReturn(STYLE)
     }
 
