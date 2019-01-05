@@ -27,7 +27,7 @@ class WeatherPlaylistAggregatorServiceImpl(
     }
 
     private fun getPlaylistByWeather(weather: Weather): Playlist {
-        var style: String = weatherPlaylistStyleTranslator.getStyleByTemperature(weather)
+        var style = weatherPlaylistStyleTranslator.getStyleByTemperature(weather)
         return spotifyService.getPlaylistByStyle(style)
     }
 

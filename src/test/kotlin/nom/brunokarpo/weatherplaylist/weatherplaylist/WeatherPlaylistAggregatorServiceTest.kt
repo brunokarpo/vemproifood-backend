@@ -4,6 +4,7 @@ import nom.brunokarpo.weatherplaylist.openweather.model.MainWeather
 import nom.brunokarpo.weatherplaylist.openweather.model.Weather
 import nom.brunokarpo.weatherplaylist.openweather.service.OpenWeatherService
 import nom.brunokarpo.weatherplaylist.spotify.model.Playlist
+import nom.brunokarpo.weatherplaylist.spotify.model.PlaylistStyle
 import nom.brunokarpo.weatherplaylist.spotify.model.Track
 import nom.brunokarpo.weatherplaylist.spotify.service.SpotifyService
 import nom.brunokarpo.weatherplaylist.weatherplaylist.impl.WeatherPlaylistAggregatorServiceImpl
@@ -25,10 +26,10 @@ class WeatherPlaylistAggregatorServiceTest {
         private const val LAT: Double = 2.1
         private const val LONG: Double = 1.1
         private const val TEMP: Double = 82.4
-        private const val STYLE: String = "Rock"
         private const val NAME: String = "Another Brick on The Wall"
         private const val ALBUM: String = "Another Brick on the Wall"
         private const val ARTIST: String = "Led Zepplin"
+        private val STYLE: PlaylistStyle = PlaylistStyle.ROCK
         private val WEATHER: Weather = Weather( name = CITY, main = MainWeather(TEMP))
         private val PLAYLIST: Playlist = Playlist(tracks = listOf(Track(name = NAME, album = ALBUM,  artist = ARTIST)
         ))

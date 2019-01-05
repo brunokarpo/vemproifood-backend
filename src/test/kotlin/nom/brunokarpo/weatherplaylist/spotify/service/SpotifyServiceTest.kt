@@ -2,6 +2,7 @@ package nom.brunokarpo.weatherplaylist.spotify.service
 
 import nom.brunokarpo.weatherplaylist.spotify.client.SpotifyClient
 import nom.brunokarpo.weatherplaylist.spotify.model.Playlist
+import nom.brunokarpo.weatherplaylist.spotify.model.PlaylistStyle
 import nom.brunokarpo.weatherplaylist.spotify.model.Track
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
@@ -34,13 +35,15 @@ class SpotifyServiceTest {
                 )
         )
 
-        Mockito.`when`(spotifyClient.getPlaylistByStyle("ROCK")).thenReturn(playlist)
+        Mockito.`when`(spotifyClient.getPlaylistByStyle(PlaylistStyle.ROCK)).thenReturn(playlist)
     }
 
     @Test
     fun `should call client to retrieve playlist by style`() {
-        val paging: Playlist = sut.getPlaylistByStyle("ROCK")
+        val paging: Playlist = sut.getPlaylistByStyle(PlaylistStyle.ROCK)
 
         assertThat(paging).isNotNull
     }
+
+
 }

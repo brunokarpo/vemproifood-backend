@@ -1,6 +1,7 @@
 package nom.brunokarpo.weatherplaylist.weatherplaylist.impl
 
 import nom.brunokarpo.weatherplaylist.openweather.model.Weather
+import nom.brunokarpo.weatherplaylist.spotify.model.PlaylistStyle
 import nom.brunokarpo.weatherplaylist.weatherplaylist.WeatherPlaylistStyleTranslator
 import org.springframework.stereotype.Service
 
@@ -18,15 +19,15 @@ class WeatherPlaylistStyleTranslatorImpl : WeatherPlaylistStyleTranslator {
         private const val CLASSICAL: String = "classical"
     }
 
-    override fun getStyleByTemperature(weather: Weather): String {
+    override fun getStyleByTemperature(weather: Weather): PlaylistStyle {
         var fahrenheit = weather.main!!.temp
         var celsius = Double.convertFahrenheitToCelsius(fahrenheit)
 
         return when(celsius) {
-            in 30.0..Double.MAX_VALUE -> PARTY
-            in 15.0..30.0 -> POP
-            in 10.0..15.0 -> ROCK
-            else -> CLASSICAL
+            in 30.0..Double.MAX_VALUE -> PlaylistStyle.PARTY
+            in 15.0..30.0 -> PlaylistStyle.POP
+            in 10.0..15.0 -> PlaylistStyle.ROCK
+            else -> PlaylistStyle.CLASSICAL
         }
 
     }
