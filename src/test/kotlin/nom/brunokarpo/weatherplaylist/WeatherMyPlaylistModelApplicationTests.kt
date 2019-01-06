@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner
 @RunWith(SpringRunner::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
-abstract class WeatherPlaylistApplicationTests {
+abstract class WeatherMyPlaylistModelApplicationTests {
 
     @LocalServerPort
     private var port: Int? = null

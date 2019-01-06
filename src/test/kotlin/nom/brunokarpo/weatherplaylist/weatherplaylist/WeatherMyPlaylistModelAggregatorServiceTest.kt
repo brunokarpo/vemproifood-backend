@@ -3,7 +3,7 @@ package nom.brunokarpo.weatherplaylist.weatherplaylist
 import nom.brunokarpo.weatherplaylist.openweather.model.MainWeather
 import nom.brunokarpo.weatherplaylist.openweather.model.Weather
 import nom.brunokarpo.weatherplaylist.openweather.service.OpenWeatherService
-import nom.brunokarpo.weatherplaylist.spotify.model.Playlist
+import nom.brunokarpo.weatherplaylist.spotify.model.MyPlaylistModel
 import nom.brunokarpo.weatherplaylist.spotify.model.PlaylistStyle
 import nom.brunokarpo.weatherplaylist.spotify.model.Track
 import nom.brunokarpo.weatherplaylist.spotify.service.SpotifyService
@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner::class)
 @SpringBootApplication
-class WeatherPlaylistAggregatorServiceTest {
+class WeatherMyPlaylistModelAggregatorServiceTest {
 
     companion object {
         private const val CITY: String = "São Paulo"
@@ -31,7 +31,7 @@ class WeatherPlaylistAggregatorServiceTest {
         private const val ARTIST: String = "Led Zepplin"
         private val STYLE: PlaylistStyle = PlaylistStyle.ROCK
         private val WEATHER: Weather = Weather( name = CITY, main = MainWeather(TEMP))
-        private val PLAYLIST: Playlist = Playlist(tracks = listOf(Track(name = NAME, album = ALBUM,  artist = ARTIST)
+        private val MY_PLAYLIST_MODEL: MyPlaylistModel = MyPlaylistModel(tracks = listOf(Track(name = NAME, album = ALBUM,  artist = ARTIST)
         ))
     }
 
@@ -58,7 +58,7 @@ class WeatherPlaylistAggregatorServiceTest {
                 .thenReturn(WEATHER)
 
         Mockito.`when`(spotifyServiceMock.getPlaylistByStyle(STYLE))
-                .thenReturn(PLAYLIST)
+                .thenReturn(MY_PLAYLIST_MODEL)
 
         Mockito.`when`(weatherPlaylistStyleTranslatorMock.getStyleByTemperature(WEATHER))
                 .thenReturn(STYLE)
@@ -66,10 +66,10 @@ class WeatherPlaylistAggregatorServiceTest {
 
     @Test
     fun `should return playlist by city name`() {
-        var playlist: Playlist = sut.getPlaylist(CITY)
+        var myPlaylistModel: MyPlaylistModel = sut.getPlaylist(CITY)
 
-        assertThat(playlist).isNotNull
-        assertThat(playlist).isEqualTo(PLAYLIST)
+        assertThat(myPlaylistModel).isNotNull
+        assertThat(myPlaylistModel).isEqualTo(MY_PLAYLIST_MODEL)
     }
 
     @Test
@@ -77,6 +77,6 @@ class WeatherPlaylistAggregatorServiceTest {
         var playlist = sut.getPlaylist(LONG, LAT)
 
         assertThat(playlist).isNotNull
-        assertThat(playlist).isEqualTo(PLAYLIST)
+        assertThat(playlist).isEqualTo(MY_PLAYLIST_MODEL)
     }
 }
