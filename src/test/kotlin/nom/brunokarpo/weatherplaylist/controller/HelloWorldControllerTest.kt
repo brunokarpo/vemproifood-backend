@@ -1,11 +1,11 @@
 package nom.brunokarpo.weatherplaylist.controller
 
 import io.restassured.RestAssured
-import nom.brunokarpo.weatherplaylist.WeatherPlaylistApplicationTests
+import nom.brunokarpo.weatherplaylist.WeatherMyPlaylistModelApplicationTests
 import org.hamcrest.CoreMatchers.equalTo
 import org.junit.Test
 
-class HelloWorldControllerTest : WeatherPlaylistApplicationTests() {
+class HelloWorldControllerTest : WeatherMyPlaylistModelApplicationTests() {
 
     @Test
     fun `should say hello world`() {

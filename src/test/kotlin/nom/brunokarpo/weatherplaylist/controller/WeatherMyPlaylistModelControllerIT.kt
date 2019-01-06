@@ -1,17 +1,17 @@
 package nom.brunokarpo.weatherplaylist.controller
 
 import io.restassured.RestAssured
-import nom.brunokarpo.weatherplaylist.WeatherPlaylistApplicationTests
+import nom.brunokarpo.weatherplaylist.WeatherMyPlaylistModelApplicationTests
 import nom.brunokarpo.weatherplaylist.openweather.model.MainWeather
 import nom.brunokarpo.weatherplaylist.openweather.model.Weather
-import nom.brunokarpo.weatherplaylist.spotify.model.Playlist
+import nom.brunokarpo.weatherplaylist.spotify.model.MyPlaylistModel
 import nom.brunokarpo.weatherplaylist.spotify.model.PlaylistStyle
 import nom.brunokarpo.weatherplaylist.spotify.model.Track
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.mockito.Mockito
 
-class WeatherPlaylistControllerIT: WeatherPlaylistApplicationTests() {
+class WeatherMyPlaylistModelControllerIT: WeatherMyPlaylistModelApplicationTests() {
 
     private companion object {
         const val CITY = "São Paulo"
@@ -22,7 +22,7 @@ class WeatherPlaylistControllerIT: WeatherPlaylistApplicationTests() {
         const val NAME = "Cowboy fora da lei"
         const val ALBUM = "O melhor de Raul Seixas"
         const val ARTIST = "Raul Seixas"
-        val PLAYLIST = Playlist(listOf(Track(NAME, ALBUM, ARTIST)))
+        val PLAYLIST = MyPlaylistModel(listOf(Track(NAME, ALBUM, ARTIST)))
     }
 
     @Test
@@ -38,7 +38,7 @@ class WeatherPlaylistControllerIT: WeatherPlaylistApplicationTests() {
                 .get("/playlist/{city}")
                 .then()
                 .statusCode(200)
-                .extract().body().`as`(Playlist::class.java)
+                .extract().body().`as`(MyPlaylistModel::class.java)
 
         assertThat(playlistResponse).isEqualTo(PLAYLIST)
     }
@@ -59,7 +59,7 @@ class WeatherPlaylistControllerIT: WeatherPlaylistApplicationTests() {
                 .get("/playlist/{longitude}/{latitude}")
                 .then()
                 .statusCode(200)
-                .extract().body().`as`(Playlist::class.java)
+                .extract().body().`as`(MyPlaylistModel::class.java)
 
         assertThat(playlistResponse).isEqualTo(PLAYLIST)
     }

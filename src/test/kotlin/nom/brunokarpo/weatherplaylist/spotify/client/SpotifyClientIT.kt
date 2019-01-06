@@ -1,6 +1,6 @@
 package nom.brunokarpo.weatherplaylist.spotify.client
 
-import nom.brunokarpo.weatherplaylist.spotify.model.Playlist
+import nom.brunokarpo.weatherplaylist.spotify.model.MyPlaylistModel
 import nom.brunokarpo.weatherplaylist.spotify.model.PlaylistStyle
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Ignore
@@ -20,10 +20,10 @@ class SpotifyClientIT {
 
     @Test
     fun `should retrieve by music style constants`() {
-        var playlist: Playlist = sut.getPlaylistByStyle(PlaylistStyle.PARTY)
+        var myPlaylistModel: MyPlaylistModel = sut.getPlaylistByStyle(PlaylistStyle.PARTY)
 
-        assertThat(playlist).isNotNull
+        assertThat(myPlaylistModel).isNotNull
 
-        println(playlist)
+        println(myPlaylistModel)
     }
 }

@@ -1,7 +1,7 @@
 package nom.brunokarpo.weatherplaylist.spotify.service
 
 import nom.brunokarpo.weatherplaylist.spotify.client.SpotifyClient
-import nom.brunokarpo.weatherplaylist.spotify.model.Playlist
+import nom.brunokarpo.weatherplaylist.spotify.model.MyPlaylistModel
 import nom.brunokarpo.weatherplaylist.spotify.model.PlaylistStyle
 import nom.brunokarpo.weatherplaylist.spotify.model.Track
 import org.assertj.core.api.Assertions.assertThat
@@ -27,7 +27,7 @@ class SpotifyServiceTest {
     @Before
     fun setUp() {
 
-        val playlist = Playlist(
+        val playlist = MyPlaylistModel(
                 arrayListOf(
                         Track(name = "Cowboy fora da Lei",
                                 artist = "Raul Seixas",
@@ -40,7 +40,7 @@ class SpotifyServiceTest {
 
     @Test
     fun `should call client to retrieve playlist by style`() {
-        val paging: Playlist = sut.getPlaylistByStyle(PlaylistStyle.ROCK)
+        val paging: MyPlaylistModel = sut.getPlaylistByStyle(PlaylistStyle.ROCK)
 
         assertThat(paging).isNotNull
     }

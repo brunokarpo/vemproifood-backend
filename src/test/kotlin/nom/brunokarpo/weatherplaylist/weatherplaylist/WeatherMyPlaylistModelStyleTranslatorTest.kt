@@ -8,7 +8,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import org.junit.Test
 
-class WeatherPlaylistStyleTranslatorTest {
+class WeatherMyPlaylistModelStyleTranslatorTest {
 
     companion object {
         private const val CELSIUS_35_FAHRENHAINT: Double = 95.0
