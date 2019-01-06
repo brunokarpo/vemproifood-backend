@@ -11,7 +11,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.mockito.Mockito
 
-class WeatherPlaylistControllerTest: WeatherPlaylistApplicationTests() {
+class WeatherPlaylistControllerIT: WeatherPlaylistApplicationTests() {
 
     private companion object {
         const val CITY = "São Paulo"
