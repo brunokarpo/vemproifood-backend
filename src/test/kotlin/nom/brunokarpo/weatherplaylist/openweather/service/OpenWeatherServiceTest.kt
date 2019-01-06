@@ -3,10 +3,8 @@ package nom.brunokarpo.weatherplaylist.openweather.service
 import nom.brunokarpo.weatherplaylist.openweather.client.OpenWeatherClient
 import nom.brunokarpo.weatherplaylist.openweather.model.MainWeather
 import nom.brunokarpo.weatherplaylist.openweather.model.Weather
-import nom.brunokarpo.weatherplaylist.openweather.service.impl.OpenWeatherServiceImpl
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
-import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito
