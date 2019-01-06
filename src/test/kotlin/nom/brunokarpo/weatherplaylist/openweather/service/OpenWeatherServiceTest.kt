@@ -1,5 +1,6 @@
 package nom.brunokarpo.weatherplaylist.openweather.service
 
+import feign.FeignException
 import nom.brunokarpo.weatherplaylist.openweather.client.OpenWeatherClient
 import nom.brunokarpo.weatherplaylist.openweather.model.MainWeather
 import nom.brunokarpo.weatherplaylist.openweather.model.Weather
@@ -57,5 +58,30 @@ class OpenWeatherServiceTest {
         Mockito.verify(clientMock).getWeather(LON, LAT)
 
         assertThat(weather).isNotNull
+    }
+
+    @Test
+    fun `should return a cool climate when client fail to retrieve by name`() {
+        Mockito.doThrow(FeignException::class.java)
+                .`when`(clientMock).getWeather(CITY)
+
+        var weather = sut.getWeather(CITY)
+
+        assertThat(weather).isNotNull
+        assertThat(weather.name).isEqualTo(CITY)
+        assertThat(weather.main).isNotNull
+        assertThat(weather.main!!.temp).isEqualTo(71.6)
+    }
+
+    @Test
+    fun `should return a cool climate when client fail to retrieve by coordinates`() {
+        Mockito.doThrow(FeignException::class.java)
+                .`when`(clientMock).getWeather(LON, LAT)
+
+        var weather = sut.getWeather(LON, LAT)
+
+        assertThat(weather).isNotNull
+        assertThat(weather.main).isNotNull
+        assertThat(weather.main!!.temp).isEqualTo(71.6)
     }
 }
