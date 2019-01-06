@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner
 @RunWith(SpringRunner::class)
 @SpringBootTest
 @Ignore
-class SpotifyClientTest {
+class SpotifyClientIT {
 
     @Autowired
     private lateinit var sut: SpotifyClient
