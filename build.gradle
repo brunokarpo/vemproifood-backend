@@ -6,6 +6,7 @@ buildscript {
     }
     repositories {
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -57,6 +58,7 @@ dependencies {
     implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    compile("se.michaelthelin.spotify:spotify-web-api-java:2.1.1")
     testImplementation("io.rest-assured:rest-assured")
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
