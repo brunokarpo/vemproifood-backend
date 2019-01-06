@@ -1,6 +1,7 @@
 package nom.brunokarpo.weatherplaylist
 
 import io.restassured.RestAssured
+import io.restassured.parsing.Parser
 import nom.brunokarpo.weatherplaylist.openweather.client.OpenWeatherClient
 import nom.brunokarpo.weatherplaylist.spotify.client.SpotifyClient
 import org.junit.Before
@@ -32,6 +33,7 @@ abstract class WeatherPlaylistApplicationTests {
     @Before
     fun setUp() {
         RestAssured.port = port!!
+        RestAssured.defaultParser = Parser.JSON
     }
 
     @Bean
