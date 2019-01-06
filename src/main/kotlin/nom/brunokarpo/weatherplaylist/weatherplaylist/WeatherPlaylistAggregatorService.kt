@@ -6,6 +6,6 @@ interface WeatherPlaylistAggregatorService {
 
     fun getPlaylist(city: String): Playlist
 
-    fun getPlaylist(latitude: Double, longitude: Double): Playlist
+    fun getPlaylist(longitude: Double, latitude: Double): Playlist
 
 }
