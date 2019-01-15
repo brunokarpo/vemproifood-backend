@@ -5,3 +5,22 @@ openweather:
 spotify:
   clientId: c7aaac525aed462baacbcfc1f64e185a
   secretKey: 85bdbf29451e43d1976953eaa4a76afd
+
+
+spring:
+  profiles:
+    active: release
+  cache:
+    type: redis
+    redis:
+      time-to-live: 86400
+  redis:
+    host: redis-server
+    port: 6379
+
+
+---
+spring:
+  profiles: test
+  cache:
+    type: NONE
