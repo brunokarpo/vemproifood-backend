@@ -18,9 +18,28 @@ spring:
     host: redis-server
     port: 6379
 
+  datasource:
+    url: jdbc:postgresql://database-server:5432/playlist-weather-db
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    hikari:
+      maximum-pool-size: 10
+  flyway:
+    enabled: true
 
 ---
 spring:
   profiles: test
   cache:
     type: NONE
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres_test
+    driverClassName: org.postgresql.Driver
+    username: postgres-user-test
+    password: postgres-passwd-test
+    type: com.zaxxer.hikari.HikariDataSource
+
+    hikari:
+      maximum-pool-size: 10

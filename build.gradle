@@ -59,9 +59,12 @@ dependencies {
     implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.postgresql:postgresql")
+    compile("com.zaxxer:HikariCP:3.1.0")
     compile("se.michaelthelin.spotify:spotify-web-api-java:2.1.1")
     testImplementation("io.rest-assured:rest-assured")
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation("ru.yandex.qatools.embed:postgresql-embedded:2.9")
 }
 
 dependencyManagement {
