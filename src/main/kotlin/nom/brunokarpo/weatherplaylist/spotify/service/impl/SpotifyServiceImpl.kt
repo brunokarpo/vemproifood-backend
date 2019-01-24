@@ -12,7 +12,7 @@ class SpotifyServiceImpl(
         private var spotifyClient: SpotifyClient
 ) : SpotifyService {
 
-    @Cacheable(value = "playlists", key = "#style.styleName")
+    @Cacheable("playlists", key = "#style.styleName")
     override fun getPlaylistByStyle(style: PlaylistStyle): MyPlaylistModel {
         return spotifyClient.getPlaylistByStyle(style)
     }
