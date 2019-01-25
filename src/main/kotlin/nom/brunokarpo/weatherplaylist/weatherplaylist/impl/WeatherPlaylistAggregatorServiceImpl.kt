@@ -1,17 +1,17 @@
 package nom.brunokarpo.weatherplaylist.weatherplaylist.impl
 
-import nom.brunokarpo.weatherplaylist.openweather.model.Weather
-import nom.brunokarpo.weatherplaylist.openweather.service.OpenWeatherService
-import nom.brunokarpo.weatherplaylist.spotify.model.MyPlaylistModel
-import nom.brunokarpo.weatherplaylist.spotify.service.SpotifyService
+import nom.brunokarpo.weatherplaylist.music.MusicService
+import nom.brunokarpo.weatherplaylist.music.model.MyPlaylistModel
+import nom.brunokarpo.weatherplaylist.weather.WeatherServices
+import nom.brunokarpo.weatherplaylist.weather.model.Weather
 import nom.brunokarpo.weatherplaylist.weatherplaylist.WeatherPlaylistAggregatorService
 import nom.brunokarpo.weatherplaylist.weatherplaylist.WeatherPlaylistStyleTranslator
 import org.springframework.stereotype.Service
 
 @Service
 class WeatherPlaylistAggregatorServiceImpl(
-        private var openweatherService: OpenWeatherService,
-        private var spotifyService: SpotifyService,
+        private var openweatherService: WeatherServices,
+        private var spotifyService: MusicService,
         private var weatherPlaylistStyleTranslator: WeatherPlaylistStyleTranslator)
     : WeatherPlaylistAggregatorService {
 

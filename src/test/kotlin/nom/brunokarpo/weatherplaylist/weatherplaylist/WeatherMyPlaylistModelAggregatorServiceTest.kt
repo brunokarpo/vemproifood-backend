@@ -1,12 +1,12 @@
 package nom.brunokarpo.weatherplaylist.weatherplaylist
 
-import nom.brunokarpo.weatherplaylist.openweather.model.MainWeather
-import nom.brunokarpo.weatherplaylist.openweather.model.Weather
-import nom.brunokarpo.weatherplaylist.openweather.service.OpenWeatherService
-import nom.brunokarpo.weatherplaylist.spotify.model.MyPlaylistModel
-import nom.brunokarpo.weatherplaylist.spotify.model.PlaylistStyle
-import nom.brunokarpo.weatherplaylist.spotify.model.Track
-import nom.brunokarpo.weatherplaylist.spotify.service.SpotifyService
+import nom.brunokarpo.weatherplaylist.music.impl.spotify.service.SpotifyService
+import nom.brunokarpo.weatherplaylist.music.model.MyPlaylistModel
+import nom.brunokarpo.weatherplaylist.music.model.PlaylistStyle
+import nom.brunokarpo.weatherplaylist.music.model.Track
+import nom.brunokarpo.weatherplaylist.weather.impl.openweather.service.OpenWeatherService
+import nom.brunokarpo.weatherplaylist.weather.model.MainWeather
+import nom.brunokarpo.weatherplaylist.weather.model.Weather
 import nom.brunokarpo.weatherplaylist.weatherplaylist.impl.WeatherPlaylistAggregatorServiceImpl
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before

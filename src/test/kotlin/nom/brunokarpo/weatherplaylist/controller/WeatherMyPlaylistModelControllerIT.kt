@@ -2,11 +2,11 @@ package nom.brunokarpo.weatherplaylist.controller
 
 import io.restassured.RestAssured
 import nom.brunokarpo.weatherplaylist.WeatherMyPlaylistModelApplicationTests
-import nom.brunokarpo.weatherplaylist.openweather.model.MainWeather
-import nom.brunokarpo.weatherplaylist.openweather.model.Weather
-import nom.brunokarpo.weatherplaylist.spotify.model.MyPlaylistModel
-import nom.brunokarpo.weatherplaylist.spotify.model.PlaylistStyle
-import nom.brunokarpo.weatherplaylist.spotify.model.Track
+import nom.brunokarpo.weatherplaylist.music.model.MyPlaylistModel
+import nom.brunokarpo.weatherplaylist.music.model.PlaylistStyle
+import nom.brunokarpo.weatherplaylist.music.model.Track
+import nom.brunokarpo.weatherplaylist.weather.model.MainWeather
+import nom.brunokarpo.weatherplaylist.weather.model.Weather
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.mockito.Mockito

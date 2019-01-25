@@ -1,7 +1,7 @@
 package nom.brunokarpo.weatherplaylist.weatherplaylist.impl
 
-import nom.brunokarpo.weatherplaylist.openweather.model.Weather
-import nom.brunokarpo.weatherplaylist.spotify.model.PlaylistStyle
+import nom.brunokarpo.weatherplaylist.music.model.PlaylistStyle
+import nom.brunokarpo.weatherplaylist.weather.model.Weather
 import nom.brunokarpo.weatherplaylist.weatherplaylist.WeatherPlaylistStyleTranslator
 import org.springframework.stereotype.Service
 

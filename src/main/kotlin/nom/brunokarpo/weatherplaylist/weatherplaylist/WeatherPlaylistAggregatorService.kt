@@ -1,6 +1,6 @@
 package nom.brunokarpo.weatherplaylist.weatherplaylist
 
-import nom.brunokarpo.weatherplaylist.spotify.model.MyPlaylistModel
+import nom.brunokarpo.weatherplaylist.music.model.MyPlaylistModel
 
 interface WeatherPlaylistAggregatorService {
 

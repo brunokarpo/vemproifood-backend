@@ -1,6 +1,6 @@
 package nom.brunokarpo.weatherplaylist.controller
 
-import nom.brunokarpo.weatherplaylist.spotify.model.MyPlaylistModel
+import nom.brunokarpo.weatherplaylist.music.model.MyPlaylistModel
 import nom.brunokarpo.weatherplaylist.weatherplaylist.WeatherPlaylistAggregatorService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
